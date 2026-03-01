@@ -331,3 +331,80 @@ style.textContent = `
     }
 `;
 document.head.appendChild(style);
+
+// Chatbox functionality
+const chatToggle = document.getElementById('chatToggle');
+const chatbox = document.getElementById('chatbox');
+const closeChat = document.getElementById('closeChat');
+const sendMessageBtn = document.getElementById('sendMessage');
+const chatInput = document.getElementById('chatInput');
+const chatMessages = document.getElementById('chatMessages');
+
+chatToggle.addEventListener('click', () => {
+    chatbox.classList.toggle('show');
+});
+
+closeChat.addEventListener('click', () => {
+    chatbox.classList.remove('show');
+});
+
+sendMessageBtn.addEventListener('click', sendMessage);
+chatInput.addEventListener('keypress', function(e) {
+    if (e.key === 'Enter') sendMessage();
+});
+
+function sendMessage() {
+    const message = chatInput.value.trim();
+    if (!message) return;
+
+    // Add user message
+    const userDiv = document.createElement('div');
+    userDiv.className = 'user-message';
+    userDiv.textContent = message;
+    chatMessages.appendChild(userDiv);
+    // Send message to Zapier
+fetch("YOUR_ZAPIER_WEBHOOK_URL_HERE", {
+    method: "POST",
+    headers: {
+        "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+        message: message,
+        source: "CarNavi Website",
+        time: new Date().toISOString()
+    })
+})
+.then(response => console.log("Sent to Zapier"))
+.catch(error => console.error("Zapier error:", error));
+
+    chatInput.value = '';
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+
+    // Simple auto reply
+    setTimeout(() => {
+        const botDiv = document.createElement('div');
+        botDiv.className = 'bot-message';
+        botDiv.innerHTML = getBotReply(message);
+        chatMessages.appendChild(botDiv);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+    }, 600);
+}
+
+function getBotReply(message) {
+    message = message.toLowerCase();
+
+    if (message.includes('price')) {
+        return "You can check product prices in the Shop section 😊";
+    }
+    if (message.includes('location') || message.includes('address')) {
+        return "We are located at Pogo Grande, Dagupan City 📍";
+    }
+    if (message.includes('contact')) {
+        return "You can call us at +63 938 344 8900 📞";
+    }
+    if (message.includes('delivery') || message.includes('shipping')) {
+        return "We offer fast delivery! 🚚";
+    }
+
+    return "Thanks for messaging us! Our team will reply shortly.";
+}

@@ -169,6 +169,99 @@ body {
     transform: translateY(-2px);
     box-shadow: var(--shadow-lg);
 }
+/* Chat Button */
+.chat-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #e60012;
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    cursor: pointer;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    z-index: 999;
+}
+
+/* Chatbox */
+.chatbox {
+    position: fixed;
+    bottom: 90px;
+    right: 20px;
+    width: 320px;
+    height: 420px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+    display: none;
+    flex-direction: column;
+    overflow: hidden;
+    z-index: 999;
+}
+
+.chatbox.show {
+    display: flex;
+}
+
+.chat-header {
+    background: #e60012;
+    color: white;
+    padding: 15px;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.chat-messages {
+    flex: 1;
+    padding: 15px;
+    overflow-y: auto;
+    font-size: 0.9rem;
+}
+
+.bot-message,
+.user-message {
+    margin-bottom: 10px;
+    padding: 10px 12px;
+    border-radius: 8px;
+    max-width: 80%;
+}
+
+.bot-message {
+    background: #f3f4f6;
+}
+
+.user-message {
+    background: #e60012;
+    color: white;
+    margin-left: auto;
+}
+
+.chat-input {
+    display: flex;
+    border-top: 1px solid #eee;
+}
+
+.chat-input input {
+    flex: 1;
+    border: none;
+    padding: 10px;
+    outline: none;
+}
+
+.chat-input button {
+    background: #e60012;
+    color: white;
+    border: none;
+    padding: 0 15px;
+    cursor: pointer;
+}
 
 /* Animations */
 @keyframes slideDown {
@@ -790,4 +883,16 @@ body {
     .sort-container select {
         width: 100%;
     }
+}
+
+.chat-logo {
+    width: 22px;
+    height: 22px;
+    animation: pulseAI 2s infinite;
+}
+
+@keyframes pulseAI {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.15); }
+    100% { transform: scale(1); }
 }

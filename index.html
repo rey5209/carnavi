@@ -8,6 +8,30 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
+    <!-- Floating Chat Button -->
+<div class="chat-toggle" id="chatToggle">
+    <i class="fas fa-comment-dots"></i>
+</div>
+
+<!-- Chatbox -->
+<div class="chatbox" id="chatbox">
+    <div class="chat-header">
+    <span>CarNavi Support</span>
+    <span id="closeChat">&times;</span>
+</div>
+
+    <div class="chat-messages" id="chatMessages">
+        <div class="bot-message">
+            👋 Hi! Welcome to CarNavi Dagupan.
+            <br>How can we help you today?
+        </div>
+    </div>
+
+    <div class="chat-input">
+        <input type="text" id="chatInput" placeholder="Type your message...">
+        <button id="sendMessage"><i class="fas fa-paper-plane"></i></button>
+    </div>
+</div>
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
