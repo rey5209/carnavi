@@ -1,4 +1,5 @@
 import logo from '../assets/img/logo.png';
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
@@ -8,12 +9,12 @@ const Navbar = () => {
                 <img src={logo} alt="CarNavi Dagupan" className="logo-img"/>
                 <span>CarNavi</span>
             </div>
-            <ul className="nav-menu">
-                <li><a href="#home" className="nav-link">Home</a></li>
-                <li><a href="#products" className="nav-link">Shop</a></li>
-                <li><a href="#about" className="nav-link">About</a></li>
-                <li><a href="#contact" className="nav-link">Contact</a></li>
-            </ul>
+            <ul className="nav-links">
+  <li><Link to="/">Home</Link></li>
+  <li><Link to="/shop">Shop</Link></li>
+  <li><Link to="/about">About</Link></li>
+  <li><Link to="/contact">Contact</Link></li>
+</ul>
             <div className="nav-icons">
                 <a href="#" className="cart-icon"><i className="fas fa-shopping-cart"></i><span className="cart-count">0</span></a>
                 <button className="menu-toggle"><i className="fas fa-bars"></i></button>
