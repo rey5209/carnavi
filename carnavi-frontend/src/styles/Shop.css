@@ -1,0 +1,36 @@
+.product-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
+  margin-top:30px;
+}
+
+.product-card{
+  background:#fff;
+  padding:15px;
+  border-radius:10px;
+  box-shadow:0 3px 10px rgba(0,0,0,0.1);
+
+  display:flex;
+  flex-direction:column;
+  height:100%;
+}
+
+.product-img{
+  width:100%;
+  height:200px;
+  object-fit:cover;
+}
+
+.product-card h3{
+  min-height:50px;
+}
+
+.price{
+  margin-top:auto;
+}
+
+.add-to-cart-btn{
+  margin-top:10px;
+  width:100%;
+}
