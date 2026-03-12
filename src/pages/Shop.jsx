@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "../styles/shop.css";
+import "../styles/Shop.css";
 
 import img1 from "../assets/img/1.jpg";
 import img2 from "../assets/img/2.jpg";
