@@ -11,7 +11,7 @@ const products = [
   { id: 4, name: "LED Car Ambient Lighting Kit", price: 9999, image: img4 }
 ];
 
-const Shop = () => {
+const Shop = ({ addToCart }) => {
   return (
     <div className="shop-page">
       <div className="container">
@@ -40,7 +40,7 @@ const Shop = () => {
 
                 <button
                   className="add-to-cart-btn"
-                  onClick={() => console.log("Add to cart:", product)}
+                  onClick={() => addToCart(product)}
                 >
                   Add to Cart
                 </button>

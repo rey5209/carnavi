@@ -9,7 +9,7 @@ import img2 from '../assets/img/2.jpg';
 import img3 from '../assets/img/3.jpg';
 import img4 from '../assets/img/4.jpg';
 
-const Home = () => {
+const Home = ({ addToCart }) => {
     const [categories, setCategories] = useState([
         { id: 0, name: 'All Products', isActive: true },
         { id: 1, name: 'LCD', isActive: false },
@@ -229,7 +229,12 @@ if (selectedCategoryName !== 'All Products') {
                                     )}
                                 </div>
 
-                                <button className="add-to-cart-btn">Add to Cart</button>
+                                <button
+  className="add-to-cart-btn"
+  onClick={() => addToCart(selectedProduct)}
+>
+  Add to Cart
+</button>
                             </div>
                         </div>
                     </div>

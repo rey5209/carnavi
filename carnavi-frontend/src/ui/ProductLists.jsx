@@ -35,7 +35,7 @@ const ProductLists = ({ ProductLists, handleProductSelect, setShowProductModal }
                                         </div>  
                                         <div className="product-footer">    
                                             <div><span className="product-price">₱{product.price.toLocaleString()}</span></div>
-                                            <button className="add-to-cart" data-id={product.id}  onClick={() => setShowProductModal(false)  }>   
+                                            <button className="add-to-cart" data-id={product.id}  onClick={() => addToCart(product)}>   
                                                 <i className="fas fa-shopping-cart"></i>
                                             </button>   
                                         </div>
