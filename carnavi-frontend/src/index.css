@@ -912,3 +912,12 @@ body {
   color: #333;
   font-weight: 500;
 }
+.map-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.map-container iframe {
+  display: block;
+  border-radius: 12px;
+}
