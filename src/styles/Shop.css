@@ -120,3 +120,18 @@ color:white;
 border-radius:6px;
 cursor:pointer;
 }
+.product-card{
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  height:100%;
+}
+
+.product-card h3{
+  min-height:48px;
+}
+.shop-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(250px, 1fr));
+  gap:20px;
+}

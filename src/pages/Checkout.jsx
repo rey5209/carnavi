@@ -43,6 +43,16 @@ const Checkout = ({ cart }) => {
 
     link.click();
   };
+  
+  // Prevent checkout if cart is empty
+if (cart.length === 0) {
+  return (
+    <div className="checkout-page">
+      <h2>Your cart is empty</h2>
+      <p>Please add products before making a reservation.</p>
+    </div>
+  );
+}
 
   return (
     <div className="checkout-page">
