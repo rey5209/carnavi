@@ -2,6 +2,7 @@ import { useState, useRef } from "react";
 import "../styles/Checkout.css";
 import QRCode from "react-qr-code";
 import html2canvas from "html2canvas";
+import logo from "../assets/img/logo.png";
 
 const Checkout = ({ cart }) => {
 
@@ -37,13 +38,10 @@ const Checkout = ({ cart }) => {
     const canvas = await html2canvas(ticketRef.current);
 
     const link = document.createElement("a");
-
     link.download = "carnavi-reservation.png";
-
     link.href = canvas.toDataURL();
 
     link.click();
-
   };
 
   return (
@@ -112,10 +110,19 @@ const Checkout = ({ cart }) => {
           <h3>Total: ₱{reservation.total.toLocaleString()}</h3>
 
           <div className="qr-container">
+
             <QRCode
               size={180}
               value={JSON.stringify(reservation)}
+              level="H"
             />
+
+            <img
+              src={logo}
+              alt="Carnavi Logo"
+              className="qr-logo"
+            />
+
           </div>
 
           <p>Show this QR code when you arrive for installation.</p>
