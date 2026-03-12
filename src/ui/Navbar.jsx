@@ -1,13 +1,12 @@
 import { useState, useEffect } from "react";
-import logo from "../assets/img/logo.png";
 import { Link } from "react-router-dom";
+import logo from "../assets/img/logo.png";
 
-const Navbar = ({ cart }) => {
-
+const Navbar = ({ cart = [] }) => {    // ← added default value (safer)
   const [animate, setAnimate] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
-
     if (cart.length === 0) return;
 
     setAnimate(true);
@@ -17,45 +16,65 @@ const Navbar = ({ cart }) => {
     }, 300);
 
     return () => clearTimeout(timer);
+  }, [cart.length]); // ← dependency on length is fine
 
-  }, [cart.length]);
+  const toggleMenu = () => {
+    setMenuOpen((prev) => !prev);
+  };
+
+  const closeMenu = () => {
+    setMenuOpen(false);
+  };
 
   return (
     <nav className="navbar">
       <div className="nav-container">
-
-        <div className="logo">
-          <img src={logo} alt="CarNavi Dagupan" className="logo-img"/>
+        {/* Logo */}
+        <Link to="/" className="logo" onClick={closeMenu}>
+          <img src={logo} alt="CarNavi" className="logo-img" />
           <span>CarNavi</span>
-        </div>
+        </Link>
 
-        <ul className="nav-links">
-          <li><Link to="/">Home</Link></li>
-          <li><Link to="/shop">Shop</Link></li>
-          <li><Link to="/compatibility">Compatibility</Link></li>
-          <li><Link to="/about">About</Link></li>
-          <li><Link to="/contact">Contact</Link></li>
+        {/* Mobile menu button */}
+        <button className="menu-toggle" onClick={toggleMenu} aria-label="Toggle menu">
+          ☰
+        </button>
+
+        {/* Navigation links */}
+        <ul className={`nav-links ${menuOpen ? "active" : ""}`}>
+          <li>
+            <Link to="/" onClick={closeMenu}>Home</Link>
+          </li>
+          <li>
+            <Link to="/shop" onClick={closeMenu}>Shop</Link>
+          </li>
+          <li>
+            <Link to="/compatibility" onClick={closeMenu}>Compatibility</Link>
+          </li>
+          <li>
+            <Link to="/about" onClick={closeMenu}>About</Link>
+          </li>
+          <li>
+            <Link to="/contact" onClick={closeMenu}>Contact</Link>
+          </li>
         </ul>
 
+        {/* Cart icon */}
         <div className="nav-icons">
-
           <Link
             to="/cart"
             className={`cart-icon ${animate ? "cart-bounce" : ""}`}
+            onClick={closeMenu}
           >
             <i className="fas fa-shopping-cart"></i>
-
             {cart.length > 0 && (
               <span className="cart-count">{cart.length}</span>
             )}
-
           </Link>
-
         </div>
-
       </div>
     </nav>
-  )
-}
+  );
+};
 
 export default Navbar;
