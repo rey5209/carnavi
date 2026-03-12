@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "../styles/compatibility.css";
+import "../styles/Compatibility.css";
 
 import fortuner1 from "../assets/img/fortuner.jpg";
 import fortuner2 from "../assets/img/fortuner.jpg";

@@ -1,4 +1,4 @@
-import "../styles/cart.css";
+import "../styles/Cart.css";
 import { useNavigate } from "react-router-dom";
 
 const Cart = ({ cart }) => {

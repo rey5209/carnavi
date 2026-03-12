@@ -1,5 +1,5 @@
 import { useState, useRef } from "react";
-import "../styles/checkout.css";
+import "../styles/Checkout.css";
 import QRCode from "react-qr-code";
 import html2canvas from "html2canvas";
 
