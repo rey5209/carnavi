@@ -5,7 +5,7 @@ import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 
 import Chatbot from "./components/Chatbot";
-import Home from "./pages/home";
+import Home from "./pages/Home";
 import Navbar from "./ui/Navbar";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
