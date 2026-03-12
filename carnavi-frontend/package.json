@@ -1,5 +1,6 @@
 {
   "name": "carnavi-frontend",
+  "homepage": "https://rey5209.github.io/carnavi/",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -11,6 +12,7 @@
   },
   "dependencies": {
     "framer-motion": "^12.35.2",
+    "gh-pages": "^6.3.0",
     "html2canvas": "^1.4.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
