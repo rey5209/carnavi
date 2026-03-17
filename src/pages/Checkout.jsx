@@ -9,6 +9,9 @@ const Checkout = ({ cart }) => {
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [vehicle, setVehicle] = useState("");
+  const [location, setLocation] = useState("");
+  const [pack, setPackage] = useState("");
+  const [landmark, setLandmark] = useState("");
   const [date, setDate] = useState("");
   const [time, setTime] = useState("");
   const [reservation, setReservation] = useState(null);
@@ -24,6 +27,9 @@ const Checkout = ({ cart }) => {
       name,
       phone,
       vehicle,
+      location,
+      landmark,
+      pack,
       date,
       time,
       cart,
@@ -83,11 +89,32 @@ if (cart.length === 0) {
             onChange={(e) => setVehicle(e.target.value)}
           />
 
+          <input
+            type="text"
+            placeholder="Location (e.g. Manila, Quezon City)"
+            required
+            onChange={(e) => setLocation(e.target.value)}
+          />
+
+          <input
+            type="text"
+            placeholder="Package (e.g. Basic, Premium)"
+            required
+            onChange={(e) => setPackage(e.target.value)}
+          />
+
           <label>Installation Date</label>
           <input
             type="date"
             required
             onChange={(e) => setDate(e.target.value)}
+          />
+
+          <label>Installation Landmark</label>
+          <input
+            type="text"
+            placeholder="if home service sent your land mark (Optional)"
+            onChange={(e) => setLandmark(e.target.value)}
           />
 
           <label>Installation Time</label>
@@ -114,6 +141,9 @@ if (cart.length === 0) {
           <p><strong>Name:</strong> {reservation.name}</p>
           <p><strong>Phone:</strong> {reservation.phone}</p>
           <p><strong>Vehicle:</strong> {reservation.vehicle}</p>
+          <p><strong>Location:</strong> {reservation.location}</p>
+          <p><strong>Package:</strong> {reservation.pack}</p>
+          <p><strong>Landmark:</strong> {reservation.landmark}</p>
           <p><strong>Date:</strong> {reservation.date}</p>
           <p><strong>Time:</strong> {reservation.time}</p>
 
