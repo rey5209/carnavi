@@ -2,14 +2,24 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../styles/Compatibility.css";
 
-import fortuner1 from "../assets/img/fortuner.jpg";
-import fortuner2 from "../assets/img/fortuner.jpg";
+/* AUTO LOAD + GROUP IMAGES */
+const imageModules = import.meta.glob("/src/assets/img/**/*.{jpg,JPG,jpeg,png,webp}", {
+  eager: true,
+  import: "default",
+});
 
-import viosNew1 from "../assets/img/vios_new.jpg";
-import viosNew2 from "../assets/img/vios_new.jpg";
+const groupedImages = {};
 
-import viosOld1 from "../assets/img/vios_old.jpg";
-import viosOld2 from "../assets/img/vios_old.jpg";
+Object.entries(imageModules).forEach(([path, src]) => {
+  const parts = path.split("/");
+  const folder = parts[parts.length - 2]; // folder name
+
+  if (!groupedImages[folder]) {
+    groupedImages[folder] = [];
+  }
+
+  groupedImages[folder].push(src);
+});
 
 /* INSTALLATION GALLERY DATA */
 
@@ -19,7 +29,7 @@ const vehicles = [
     unit: "Android 10.1 QLED Unit",
     price: "₱16,999",
     note: "Latest dashboard design",
-    images: [fortuner1, fortuner2],
+    images: groupedImages["fortuner"] || [],
   },
 
   {
@@ -27,7 +37,7 @@ const vehicles = [
     unit: "Android 9 inch QLED Unit",
     price: "₱14,999",
     note: "Latest dashboard design",
-    images: [viosNew1, viosNew2],
+    images: groupedImages["vios_new"] || [],
   },
 
   {
@@ -35,7 +45,7 @@ const vehicles = [
     unit: "Android Standard Unit",
     price: "₱9,999",
     note: "Older dashboard compatible",
-    images: [viosOld1, viosOld2],
+    images: groupedImages["vios_old"] || [],
   },
 ];
 
@@ -49,7 +59,7 @@ const vehicleDB = [
     unit: "Android 10.1 QLED",
     price: "₱16,999",
     productName: "10.1 inch QLED Android Head Unit",
-    image: fortuner1,
+    image: groupedImages["fortuner"]?.[0],
   },
 
   {
@@ -59,7 +69,7 @@ const vehicleDB = [
     unit: "Android 9 inch QLED",
     price: "₱14,999",
     productName: "9 inch QLED Android Head Unit",
-    image: viosNew1,
+    image: groupedImages["vios_new"]?.[0],
   },
 
   {
@@ -69,7 +79,7 @@ const vehicleDB = [
     unit: "Android Standard",
     price: "₱9,999",
     productName: "Standard Android Head Unit",
-    image: viosOld1,
+    image: groupedImages["vios_old"]?.[0],
   },
 
   {
@@ -79,7 +89,7 @@ const vehicleDB = [
     unit: "Android 10 QLED",
     price: "₱15,999",
     productName: "10 inch QLED Android Head Unit",
-    image: fortuner1,
+    image: groupedImages["fortuner"]?.[0], // placeholder
   },
 ];
 
@@ -208,8 +218,6 @@ const Compatibility = ({ addToCart }) => {
 
             <p className="compat-price">{result.price}</p>
 
-            {/* PRODUCT CARD */}
-
             <div className="compat-product-card">
               <img
                 src={result.image}
@@ -233,11 +241,11 @@ const Compatibility = ({ addToCart }) => {
                     })
                   }
                 >
-                  Add to Cart{" "}
+                  Add to Cart
                 </button>
 
                 <button className="install-btn" onClick={handleInstall}>
-                  Book Installation{" "}
+                  Book Installation
                 </button>
               </div>
             </div>
@@ -251,8 +259,6 @@ const Compatibility = ({ addToCart }) => {
         {!model && (
           <div className="compat-message">
             Please select your vehicle brand, model and year.
-            <br />
-            If your car is not listed please contact our shop.
           </div>
         )}
 
@@ -273,18 +279,15 @@ const Compatibility = ({ addToCart }) => {
 
             <div className="compat-product-info">
               <h4>{car.model}</h4>
-
               <p className="compat-unit">{car.unit}</p>
-
               <p className="product-price">{car.price}</p>
-
               <p className="compat-note">{car.note}</p>
             </div>
           </div>
         ))}
       </div>
 
-      {/* INSTALLATION GALLERY MODAL */}
+      {/* MODAL */}
 
       {selectedCar && (
         <div className="compat-modal">
@@ -293,7 +296,7 @@ const Compatibility = ({ addToCart }) => {
               className="close-modal"
               onClick={() => setSelectedCar(null)}
             >
-              ✕{" "}
+              ✕
             </button>
 
             <h2>{selectedCar.model}</h2>
@@ -308,7 +311,9 @@ const Compatibility = ({ addToCart }) => {
                 <img
                   key={i}
                   src={img}
-                  className={`thumbnail ${activeImage === i ? "active-thumb" : ""}`}
+                  className={`thumbnail ${
+                    activeImage === i ? "active-thumb" : ""
+                  }`}
                   onClick={() => setActiveImage(i)}
                 />
               ))}
