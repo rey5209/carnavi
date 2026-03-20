@@ -5,10 +5,16 @@ import Filterer from "../ui/Filterer";
 import ProductLists from "../ui/ProductLists";
 import HeroSlider from "../ui/HeroSlider";
 
-import img1 from "../assets/img/1.jpg";
-import img2 from "../assets/img/2.jpg";
-import img3 from "../assets/img/3.jpg";
-import img4 from "../assets/img/4.jpg";
+import img1 from "../assets/img/2knob.jpg";
+import img2 from "../assets/img/10in2kdualknob.jpg";
+import img3 from "../assets/img/13in4gb64gb.jpg";
+import img4 from "../assets/img/360camcollection.jpg";
+import img5 from "../assets/img/PackageA.jpg";
+import img6 from "../assets/img/PackageA+FDC.jpg";
+import img7 from "../assets/img/PackageB.jpg";
+import img8 from "../assets/img/PackageC.jpg";
+import img9 from "../assets/img/PackageD.jpg";
+import img10 from "../assets/img/PackageD2.jpg";
 
 const Home = ({ addToCart }) => {
   const navigate = useNavigate();
@@ -30,81 +36,189 @@ const Home = ({ addToCart }) => {
   ]);
 
   const [products] = useState([
-    {
-      id: 1,
-      name: "OLED DISPLAY 10.1 inch 2k QLED",
-      specifications: [
-        "Android 14",
-        "Touchscreen display",
-        "Wireless connectivity",
-        "Bluetooth support",
-        "4GB RAM, 32GB Storage",
-        "8 core processor",
-        "Wifi support",
-      ],
-      category: "LCD",
-      price: 16999,
-      rating: 3.5,
-      description:
-        "Comfortable and durable leather steering wheel cover with anti-slip grip",
-      image: img1,
-      inStock: true,
-      badge: "Best Seller",
-    },
-    {
-      id: 2,
-      name: "Performance Air Filter",
-      specifications: [
-        "HEPA Filter Technology",
-        "Removes 99.9% of particles",
-        "USB power supply",
-        "Compact design",
-      ],
-      category: "Performance",
-      price: 2999,
-      rating: 2.8,
-      description:
-        "High-performance air filter for improved engine efficiency and power",
-      image: img2,
-      inStock: true,
-      badge: "",
-    },
-    {
-      id: 3,
-      name: "Package A",
-      specifications: [
-        "Material: Premium Rubber",
-        "Set of 4 pieces",
-        "Anti-slip backing",
-        "Easy to clean",
-      ],
-      category: "Safety",
-      price: 6999,
-      rating: 4.8,
-      description:
-        "Bright LED headlight bulbs for enhanced visibility and safety on the road",
-      image: img3,
-      inStock: true,
-      badge: "New Arrival",
-    },
-    {
-      id: 4,
-      name: "Package C",
-      category: "LCD",
-      price: 9999,
-      rating: 4.9,
-      image: img4,
-      description: "16 color LED ambient lighting with remote control",
-      specifications: [
-        "16 Color options",
-        "Remote control included",
-        "App compatible",
-        "Energy efficient",
-      ],
-      inStock: true,
-      badge: "Best Seller",
-    },
-  ]);
+  {
+    id: 1,
+    name: "2k Dual knob Display",
+    specifications: [
+      "Android 14",
+      "Dual knob control",
+      "Touchscreen display",
+      "11.5 Inch Qled Display",
+      "Wireless connectivity",
+      "Bluetooth support",
+      "4GB RAM, 64GB Storage",
+      "8 Core Processor",
+      "WiFi support",
+    ],
+    category: "LCD",
+    price: 23999,
+    rating: 4.5,
+    description: "Premium 10.1-inch QLED Android head unit with smooth performance.",
+    image: img1,
+    inStock: true,
+    badge: "Best Seller",
+  },
+  {
+    id: 2,
+    name: "10 inch 2K Dual Knob Display",
+    specifications: [
+      "Android 14",
+      "Dual knob control",
+      "Touchscreen display",
+      "2K resolution",
+      "10 Inch Qled Display",
+      "8 Core Processor",
+      "4GB RAM, 32GB Storage",
+      "Bluetooth & WiFi",
+      "Smooth UI",
+    ],
+    category: "LCD",
+    price: 16999,
+    rating: 4.3,
+    description: "Modern dual-knob display for easy control and premium feel.",
+    image: img2,
+    inStock: true,
+    badge: "",
+  },
+  {
+    id: 3,
+    name: "13 inch Android Display 4GB+64GB",
+    specifications: [
+      "13-inch large screen",
+      "4GB RAM + 64GB Storage",
+      "2K resolution",
+      "Android 14",
+      "Split screen support",
+      "Freebies included",
+    ],
+    category: "LCD",
+    price: 24999,
+    rating: 4.8,
+    description: "Big screen entertainment and navigation upgrade.",
+    image: img3,
+    inStock: true,
+    badge: "Discount",
+  },
+  {
+    id: 4,
+    name: "360 Camera System",
+    specifications: [
+      "360° view",
+      "Parking assist",
+      "HD recording",
+      "Night vision",
+    ],
+    category: "Safety",
+    price: 20000,
+    rating: 4.7,
+    description: "Full surround camera system for maximum driving safety.",
+    image: img4,
+    inStock: true,
+    badge: "Best Seller",
+  },
+  {
+    id: 5,
+    name: "Package A",
+    specifications: [
+      "Basic setup",
+      "Android head unit",
+      "Rear camera included",
+      "Professional install",
+    ],
+    category: "Package",
+    price: 6999,
+    rating: 4.5,
+    description: "Affordable starter package for your vehicle upgrade.",
+    image: img5,
+    inStock: true,
+    badge: "",
+  },
+  {
+    id: 6,
+    name: "Package A + FDC",
+    specifications: [
+      "Package A inclusions",
+      "Front dash camera",
+      "HD recording",
+      "Extra safety",
+    ],
+    category: "Package",
+    price: 14500,
+    rating: 4.6,
+    description: "Package A upgraded with front dash camera.",
+    image: img6,
+    inStock: true,
+    badge: "Popular",
+  },
+  {
+    id: 7,
+    name: "Package B",
+    specifications: [
+      "Improved system",
+      "Better display",
+      "Rear camera",
+      "Smooth performance",
+    ],
+    category: "Package",
+    price: 9999,
+    rating: 4.7,
+    description: "Balanced package for performance and features.",
+    image: img7,
+    inStock: true,
+    badge: "",
+  },
+  {
+    id: 8,
+    name: "Package C",
+    specifications: [
+      "Package B inclusions",
+      "Front dash cam",
+      "Clear recording",
+      "Enhanced safety",
+    ],
+    category: "Package",
+    price: 12999,
+    rating: 4.8,
+    description: "Package B with additional front camera upgrade.",
+    image: img8,
+    inStock: true,
+    badge: "Best Seller",
+  },
+  {
+    id: 9,
+    name: "Package D",
+    specifications: [
+      "Premium build",
+      "Fast performance",
+      "High resolution",
+      "Complete setup",
+    ],
+    category: "Package",
+    price: 15999,
+    rating: 4.9,
+    description: "Premium upgrade for a full in-car experience.",
+    image: img9,
+    inStock: true,
+    badge: "Top Tier",
+  },
+  {
+    id: 10,
+    name: "Package D2",
+    specifications: [
+      "Advanced features",
+      "Smooth UI",
+      "High storage",
+      "Reliable system",
+    ],
+    category: "Package",
+    price: 23999,
+    rating: 4.7,
+    description: "Advanced package with powerful system performance.",
+    image: img10,
+    inStock: true,
+    badge: "",
+  },
+]);
 
   const [showProductModal, setShowProductModal] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState(null);
