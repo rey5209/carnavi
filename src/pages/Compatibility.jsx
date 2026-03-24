@@ -40,7 +40,7 @@ const vehicles = [
     unit: "Android QLED Unit",
     price: "₱14,999",
     note: "Best seller",
-    media: groupedMedia["vios"] || [],
+    media: groupedMedia["vios_old"] || [],
   },
 
   {
