@@ -1216,3 +1216,90 @@ box-shadow:0 10px 25px rgba(0,0,0,0.1);
 .logo-img{
   height:30px;
 }
+.facebook-link {
+  color: #1877f2;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.facebook-link:hover {
+  opacity: 0.8;
+}
+.freebies-box {
+  margin-top: 10px;
+  padding: 10px;
+  background: #fff7e6;
+  border-radius: 8px;
+  border: 1px solid #ffd700;
+}
+
+.freebies-box h4 {
+  margin-bottom: 5px;
+  color: #d97706;
+}
+
+.about-wrapper {
+  color: #111;
+}
+
+/* HERO */
+.about-hero {
+  background: linear-gradient(135deg, #000, #1a1a1a);
+  color: white;
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.about-hero h1 {
+  font-size: 42px;
+  font-weight: bold;
+}
+
+.hero-sub {
+  margin-top: 10px;
+  opacity: 0.8;
+}
+
+/* GRID */
+.about-section {
+  padding: 60px 20px;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.about-card {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+  transition: 0.3s;
+}
+
+.about-card h3 {
+  margin-bottom: 10px;
+}
+
+/* CTA */
+.about-cta {
+  background: #111;
+  color: white;
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.cta-btn {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 20px;
+  background: #ffcc00;
+  color: black;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+}

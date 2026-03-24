@@ -58,6 +58,7 @@ const Home = ({ addToCart }) => {
     inStock: true,
     badge: "Best Seller",
   },
+
   {
     id: 2,
     name: "10 inch 2K Dual Knob Display",
@@ -80,6 +81,7 @@ const Home = ({ addToCart }) => {
     inStock: true,
     badge: "",
   },
+
   {
     id: 3,
     name: "13 inch Android Display 4GB+64GB",
@@ -89,7 +91,6 @@ const Home = ({ addToCart }) => {
       "2K resolution",
       "Android 14",
       "Split screen support",
-      "Freebies included",
     ],
     category: "LCD",
     price: 24999,
@@ -98,7 +99,9 @@ const Home = ({ addToCart }) => {
     image: img3,
     inStock: true,
     badge: "Discount",
+    freebies: ["GPS Antenna", "Free reverse camera", "Free panel frame", "USB Ports"],
   },
+
   {
     id: 4,
     name: "360 Camera System",
@@ -115,7 +118,9 @@ const Home = ({ addToCart }) => {
     image: img4,
     inStock: true,
     badge: "Best Seller",
+    freebies: ["Panel Frame", "GPS Antenna", "USB Ports", "RCA Cables"],
   },
+
   {
     id: 5,
     name: "Package A",
@@ -132,7 +137,9 @@ const Home = ({ addToCart }) => {
     image: img5,
     inStock: true,
     badge: "",
+    freebies: ["Free installation", "Free wiring harness"],
   },
+
   {
     id: 6,
     name: "Package A + FDC",
@@ -149,7 +156,9 @@ const Home = ({ addToCart }) => {
     image: img6,
     inStock: true,
     badge: "Popular",
+    freebies: ["Free installation", "Free reverse camera", "Free dash cam"],
   },
+
   {
     id: 7,
     name: "Package B",
@@ -166,7 +175,9 @@ const Home = ({ addToCart }) => {
     image: img7,
     inStock: true,
     badge: "",
+    freebies: ["Free installation"],
   },
+
   {
     id: 8,
     name: "Package C",
@@ -183,7 +194,9 @@ const Home = ({ addToCart }) => {
     image: img8,
     inStock: true,
     badge: "Best Seller",
+    freebies: ["Free installation", "Front camera included"],
   },
+
   {
     id: 9,
     name: "Package D",
@@ -200,7 +213,9 @@ const Home = ({ addToCart }) => {
     image: img9,
     inStock: true,
     badge: "Top Tier",
+    freebies: ["Free installation", "Complete accessories included"],
   },
+
   {
     id: 10,
     name: "Package D2",
@@ -217,6 +232,7 @@ const Home = ({ addToCart }) => {
     image: img10,
     inStock: true,
     badge: "",
+    freebies: ["Free installation", "Premium wiring kit"],
   },
 ]);
 
@@ -328,6 +344,14 @@ const Home = ({ addToCart }) => {
                 <p>{selectedProduct.description}</p>
 
                 <div className="modal-specs">
+                  {selectedProduct.freebies && (
+  <div className="freebies-box">
+    <h4>🎁 Freebies Included:</h4>
+    {selectedProduct.freebies.map((item, i) => (
+      <p key={i}>• {item}</p>
+    ))}
+  </div>
+)}
                   {selectedProduct.specifications.map((spec, i) => (
                     <p key={i}>✓ {spec}</p>
                   ))}

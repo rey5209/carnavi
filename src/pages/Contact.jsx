@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { FaFacebook } from "react-icons/fa";
 
 const Contact = () => {
   return (
@@ -15,8 +16,20 @@ const Contact = () => {
           <p>If you have questions about our products, feel free to contact us.</p>
 
           <div className="contact-info">
-            <p><strong>Phone:</strong> +63 9XX XXX XXXX</p>
-            <p><strong>Email:</strong> carnavi@gmail.com</p>
+            <p>
+  <strong>Phone:</strong> +63 938 344 8900 &nbsp;&nbsp;|&nbsp;&nbsp; +63 947 347 0670
+</p>
+            <p>
+  <strong>Facebook Messenger:</strong>{" "}
+  <a
+    href="https://www.facebook.com/reynoldpetrola/"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="facebook-link"
+  >
+    <FaFacebook size={20} /> Car-Navi Android Monitor Pangasinan
+  </a>
+</p>
             <p><strong>Location:</strong> Pogo Grande, Dagupan City 2400 Pangasinan</p>
           </div>
 

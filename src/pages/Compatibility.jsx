@@ -2,26 +2,29 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../styles/Compatibility.css";
 
-/* AUTO LOAD + GROUP IMAGES */
-const imageModules = import.meta.glob("/src/assets/img/**/*.{jpg,JPG,jpeg,png,webp}", {
-  eager: true,
-  import: "default",
-});
+/* AUTO LOAD IMAGES + VIDEOS */
+const mediaModules = import.meta.glob(
+  "/src/assets/**/*.{jpg,JPG,jpeg,png,webp,mp4}",
+  {
+    eager: true,
+    import: "default",
+  }
+);
 
-const groupedImages = {};
+const groupedMedia = {};
 
-Object.entries(imageModules).forEach(([path, src]) => {
+Object.entries(mediaModules).forEach(([path, src]) => {
   const parts = path.split("/");
-  const folder = parts[parts.length - 2]; // folder name
+  const folder = parts[parts.length - 2];
 
-  if (!groupedImages[folder]) {
-    groupedImages[folder] = [];
+  if (!groupedMedia[folder]) {
+    groupedMedia[folder] = [];
   }
 
-  groupedImages[folder].push(src);
+  groupedMedia[folder].push(src);
 });
 
-/* INSTALLATION GALLERY DATA */
+/* VEHICLES */
 
 const vehicles = [
   {
@@ -29,82 +32,166 @@ const vehicles = [
     unit: "Android 10.1 QLED Unit",
     price: "₱16,999",
     note: "Latest dashboard design",
-    images: groupedImages["fortuner"] || [],
+    media: groupedMedia["fortuner"] || [],
   },
 
   {
-    model: "Toyota Vios (2021+)",
-    unit: "Android 9 inch QLED Unit",
+    model: "Toyota Vios (2014-2024)",
+    unit: "Android QLED Unit",
     price: "₱14,999",
-    note: "Latest dashboard design",
-    images: groupedImages["vios_new"] || [],
+    note: "Best seller",
+    media: groupedMedia["vios"] || [],
   },
 
   {
-    model: "Toyota Vios (2014-2020)",
-    unit: "Android Standard Unit",
-    price: "₱9,999",
-    note: "Older dashboard compatible",
-    images: groupedImages["vios_old"] || [],
+    model: "Honda Civic",
+    unit: "Android QLED Unit",
+    price: "₱14,999",
+    note: "Clean installation",
+    media: groupedMedia["civic"] || [],
   },
 ];
 
-/* VEHICLE SEARCH DATABASE */
+/* VEHICLE DB */
 
-const vehicleDB = [
-  {
-    brand: "Toyota",
-    model: "Fortuner",
-    year: "2021",
-    unit: "Android 10.1 QLED",
-    price: "₱16,999",
-    productName: "10.1 inch QLED Android Head Unit",
-    image: groupedImages["fortuner"]?.[0],
-  },
+const brandsModels = {
+  Toyota: [
+    "Vios",
+    "Fortuner",
+    "Hilux",
+    "Innova",
+    "Corolla Altis",
+    "Wigo",
+    "Avanza",
+    "Rush",
+    "Land Cruiser",
+    "Raize",
+  ],
 
-  {
-    brand: "Toyota",
-    model: "Vios",
-    year: "2021",
-    unit: "Android 9 inch QLED",
-    price: "₱14,999",
-    productName: "9 inch QLED Android Head Unit",
-    image: groupedImages["vios_new"]?.[0],
-  },
+  Honda: [
+    "Civic",
+    "City",
+    "CR-V",
+    "BR-V",
+    "Mobilio",
+    "Jazz",
+    "HR-V",
+    "Accord",
+  ],
 
-  {
-    brand: "Toyota",
-    model: "Vios",
-    year: "2018",
-    unit: "Android Standard",
-    price: "₱9,999",
-    productName: "Standard Android Head Unit",
-    image: groupedImages["vios_old"]?.[0],
-  },
+  Nissan: [
+    "Navara",
+    "Terra",
+    "Almera",
+    "Sylphy",
+    "Patrol",
+    "X-Trail",
+    "Juke",
+  ],
 
-  {
-    brand: "Mitsubishi",
-    model: "Montero",
-    year: "2020",
-    unit: "Android 10 QLED",
-    price: "₱15,999",
-    productName: "10 inch QLED Android Head Unit",
-    image: groupedImages["fortuner"]?.[0], // placeholder
-  },
-];
+  Hyundai: [
+    "Accent",
+    "Elantra",
+    "Tucson",
+    "Santa Fe",
+    "Starex",
+    "Kona",
+    "Creta",
+  ],
+
+  Isuzu: [
+    "D-Max",
+    "MU-X",
+    "Crosswind",
+    "Alterra",
+  ],
+
+  Subaru: [
+    "Forester",
+    "XV",
+    "Outback",
+    "Impreza",
+    "WRX",
+    "BRZ",
+  ],
+
+  Ford: [
+  "Ranger",
+  "Everest",
+  "EcoSport",
+  "Territory",
+  "Explorer",
+  "Expedition",
+  "Escape",
+  "Focus",
+  "Fiesta",
+  "Mustang",
+  "F-150",
+  "Bronco",
+  "Bronco Sport",
+  "Edge",
+  "Fusion",
+],
+};
+
+const years = Array.from({ length: 2024 - 2001 + 1 }, (_, i) =>
+  (2001 + i).toString()
+);
+
+/* AUTO GENERATE DB */
+
+const vehicleDB = [];
+
+Object.entries(brandsModels).forEach(([brand, models]) => {
+  models.forEach((model) => {
+    years.forEach((year) => {
+      vehicleDB.push({
+        brand,
+        model,
+        year,
+
+        // DEFAULT CONFIG (you can customize later)
+        unit:
+          parseInt(year) >= 2020
+            ? "Android 10.1 QLED"
+            : parseInt(year) >= 2015
+            ? "Android 9 inch QLED"
+            : "Android Standard",
+
+        price:
+          parseInt(year) >= 2020
+            ? "₱16,999"
+            : parseInt(year) >= 2015
+            ? "₱14,999"
+            : "₱9,999",
+
+        productName:
+          parseInt(year) >= 2020
+            ? "10.1 inch QLED Android Head Unit"
+            : parseInt(year) >= 2015
+            ? "9 inch QLED Android Head Unit"
+            : "Standard Android Head Unit",
+
+        image: groupedMedia[model.toLowerCase()]?.[0] || null,
+      });
+    });
+  });
+});
 
 const Compatibility = ({ addToCart }) => {
   const navigate = useNavigate();
 
   const [selectedCar, setSelectedCar] = useState(null);
-  const [activeImage, setActiveImage] = useState(0);
+  const [activeMedia, setActiveMedia] = useState(0);
 
   const [brand, setBrand] = useState("");
   const [model, setModel] = useState("");
   const [year, setYear] = useState("");
 
-  /* DROPDOWN FILTERS */
+  /* HELPERS */
+  const isVideo = (file) => file?.match(/\.(mp4|webm|ogg)$/i);
 
+  /* DROPDOWN */
   const brands = [...new Set(vehicleDB.map((v) => v.brand))];
 
   const models = [
@@ -115,24 +202,18 @@ const Compatibility = ({ addToCart }) => {
     ...new Set(
       vehicleDB
         .filter((v) => v.brand === brand && v.model === model)
-        .map((v) => v.year),
+        .map((v) => v.year)
     ),
   ];
 
-  /* FIND RESULT */
-
   const result = vehicleDB.find(
-    (v) => v.brand === brand && v.model === model && v.year === year,
+    (v) => v.brand === brand && v.model === model && v.year === year
   );
-
-  /* FILTER INSTALLATION CARDS */
 
   const filteredVehicles = vehicles.filter((car) => {
     if (!model) return false;
     return car.model.toLowerCase().includes(model.toLowerCase());
   });
-
-  /* INSTALL BUTTON */
 
   const handleInstall = () => {
     if (!result) return;
@@ -155,7 +236,7 @@ const Compatibility = ({ addToCart }) => {
         Check which Android head unit works with your vehicle.
       </p>
 
-      {/* VEHICLE SELECTOR */}
+      {/* SELECTOR */}
 
       <div className="vehicle-search">
         <h2>Find Compatible Head Unit</h2>
@@ -169,11 +250,8 @@ const Compatibility = ({ addToCart }) => {
           }}
         >
           <option value="">Select Brand</option>
-
           {brands.map((b, i) => (
-            <option key={i} value={b}>
-              {b}
-            </option>
+            <option key={i}>{b}</option>
           ))}
         </select>
 
@@ -186,11 +264,8 @@ const Compatibility = ({ addToCart }) => {
           disabled={!brand}
         >
           <option value="">Select Model</option>
-
           {models.map((m, i) => (
-            <option key={i} value={m}>
-              {m}
-            </option>
+            <option key={i}>{m}</option>
           ))}
         </select>
 
@@ -200,11 +275,8 @@ const Compatibility = ({ addToCart }) => {
           disabled={!model}
         >
           <option value="">Select Year</option>
-
           {years.map((y, i) => (
-            <option key={i} value={y}>
-              {y}
-            </option>
+            <option key={i}>{y}</option>
           ))}
         </select>
 
@@ -213,21 +285,17 @@ const Compatibility = ({ addToCart }) => {
         {result && (
           <div className="compat-result">
             <h3>Compatible Unit</h3>
-
             <p>{result.unit}</p>
-
             <p className="compat-price">{result.price}</p>
 
             <div className="compat-product-card">
               <img
                 src={result.image}
-                alt={result.productName}
                 className="compat-product-image"
               />
 
               <div className="compat-product-info">
                 <h4>{result.productName}</h4>
-
                 <p className="product-price">{result.price}</p>
 
                 <button
@@ -253,7 +321,7 @@ const Compatibility = ({ addToCart }) => {
         )}
       </div>
 
-      {/* INSTALLATION EXAMPLES */}
+      {/* CARDS */}
 
       <div className="compatibility-grid">
         {!model && (
@@ -268,12 +336,11 @@ const Compatibility = ({ addToCart }) => {
             className="compat-product-card"
             onClick={() => {
               setSelectedCar(car);
-              setActiveImage(0);
+              setActiveMedia(0);
             }}
           >
             <img
-              src={car.images[0]}
-              alt={car.model}
+              src={car.media[0]}
               className="compat-product-image"
             />
 
@@ -301,22 +368,46 @@ const Compatibility = ({ addToCart }) => {
 
             <h2>{selectedCar.model}</h2>
 
-            <img
-              src={selectedCar.images[activeImage]}
-              className="main-preview"
-            />
+            {/* MAIN PREVIEW */}
+            {isVideo(selectedCar.media[activeMedia]) ? (
+              <video
+                src={selectedCar.media[activeMedia]}
+                className="main-preview"
+                controls
+                autoPlay
+                loop
+              />
+            ) : (
+              <img
+                src={selectedCar.media[activeMedia]}
+                className="main-preview"
+              />
+            )}
 
+            {/* THUMBNAILS */}
             <div className="thumbnail-row">
-              {selectedCar.images.map((img, i) => (
-                <img
-                  key={i}
-                  src={img}
-                  className={`thumbnail ${
-                    activeImage === i ? "active-thumb" : ""
-                  }`}
-                  onClick={() => setActiveImage(i)}
-                />
-              ))}
+              {selectedCar.media.map((item, i) =>
+                isVideo(item) ? (
+                  <video
+                    key={i}
+                    src={item}
+                    className={`thumbnail ${
+                      activeMedia === i ? "active-thumb" : ""
+                    }`}
+                    onClick={() => setActiveMedia(i)}
+                    muted
+                  />
+                ) : (
+                  <img
+                    key={i}
+                    src={item}
+                    className={`thumbnail ${
+                      activeMedia === i ? "active-thumb" : ""
+                    }`}
+                    onClick={() => setActiveMedia(i)}
+                  />
+                )
+              )}
             </div>
           </div>
         </div>
