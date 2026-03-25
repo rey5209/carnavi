@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
@@ -17,6 +17,29 @@ import HeroSlider from "./ui/HeroSlider";
 
 function App() {
   const [cart, setCart] = useState([]);
+
+  
+  useEffect(() => {
+    console.clear();
+
+    console.log(
+      "%c⚠️ Bawal Scammer ",
+      "color:red; font-size:40px; font-weight:bold;"
+    );
+
+    console.warn(
+      "This is a browser feature intended for developers."
+    );
+
+    console.warn(
+      "Find Rey for more info, if you could find him..."
+    );
+
+    console.error(
+      "Do not paste anything here unless you understand it."
+    );
+  }, []);
+  
 
   const addToCart = (product) => {
     setCart((prev) => [...prev, product]);
