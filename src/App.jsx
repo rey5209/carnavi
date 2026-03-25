@@ -32,7 +32,7 @@ function App() {
     );
 
     console.warn(
-      "Find Rey for more info, if you could find him..."
+      "Need more info? Find Rey… if you can."
     );
 
     console.error(
