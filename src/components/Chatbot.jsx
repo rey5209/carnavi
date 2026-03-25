@@ -1,11 +1,11 @@
 import { useState } from "react";
 
 export default function Chatbot() {
-
   const [open, setOpen] = useState(false);
 
   const [messages, setMessages] = useState([
-    { text: "Hi! How can I help you?", sender: "bot" }
+    { text: "Hi! I'm Carnavi Bot Created by Meyers how can I help you?", sender: "bot" },
+    { text: "How can I help you?", sender: "bot" }
   ]);
 
   const [input, setInput] = useState("");
@@ -29,9 +29,8 @@ export default function Chatbot() {
   };
 
   return (
-    <div>
-
-      {/* Floating Button */}
+    <>
+      {/* 🔥 Floating Button */}
       <button
         onClick={() => setOpen(!open)}
         style={{
@@ -44,42 +43,58 @@ export default function Chatbot() {
           width: "60px",
           height: "60px",
           border: "none",
-          fontSize: "20px",
-          cursor: "pointer"
+          fontSize: "22px",
+          cursor: "pointer",
+          zIndex: 9999   // 🔥 ALWAYS ON TOP
         }}
       >
         💬
       </button>
 
-      {/* Chatbox */}
+      {/* 🔥 Chatbox */}
       {open && (
         <div
           style={{
             position: "fixed",
             bottom: "90px",
             right: "20px",
-            width: "300px",
-            height: "400px",
+            width: "320px",
+            height: "420px",
             background: "#fff",
-            borderRadius: "10px",
-            boxShadow: "0 0 10px rgba(0,0,0,0.2)",
+            borderRadius: "12px",
+            boxShadow: "0 10px 25px rgba(0,0,0,0.2)",
             display: "flex",
-            flexDirection: "column"
+            flexDirection: "column",
+            overflow: "hidden",
+            zIndex: 9999 // 🔥 FIX FLOATING ISSUE
           }}
         >
-
           {/* Header */}
-          <div
-            style={{
-              background: "#ff0000",
-              color: "#fff",
-              padding: "10px",
-              borderTopLeftRadius: "10px",
-              borderTopRightRadius: "10px"
-            }}
-          >
-            Chat Support
-          </div>
+<div
+  style={{
+    background: "#ff0000",
+    color: "#fff",
+    padding: "12px",
+    fontWeight: "bold",
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center"
+  }}
+>
+  Carnavi Bot
+
+  {/* ❌ Close Button */}
+  <span
+    onClick={() => setOpen(false)}
+    style={{
+      cursor: "pointer",
+      fontSize: "20px",
+      fontWeight: "bold"
+    }}
+  >
+    ✕
+  </span>
+</div>
 
           {/* Messages */}
           <div
@@ -101,9 +116,10 @@ export default function Chatbot() {
                   style={{
                     background: msg.sender === "user" ? "#ff0000" : "#eee",
                     color: msg.sender === "user" ? "#fff" : "#000",
-                    padding: "6px 10px",
-                    borderRadius: "10px",
-                    display: "inline-block"
+                    padding: "8px 12px",
+                    borderRadius: "12px",
+                    display: "inline-block",
+                    maxWidth: "80%"
                   }}
                 >
                   {msg.text}
@@ -113,7 +129,12 @@ export default function Chatbot() {
           </div>
 
           {/* Input */}
-          <div style={{ display: "flex", borderTop: "1px solid #ddd" }}>
+          <div
+            style={{
+              display: "flex",
+              borderTop: "1px solid #ddd"
+            }}
+          >
             <input
               type="text"
               placeholder="Type message..."
@@ -125,7 +146,8 @@ export default function Chatbot() {
               style={{
                 flex: 1,
                 border: "none",
-                padding: "10px"
+                padding: "10px",
+                outline: "none"
               }}
             />
 
@@ -135,15 +157,15 @@ export default function Chatbot() {
                 background: "#ff0000",
                 color: "#fff",
                 border: "none",
-                padding: "10px"
+                padding: "0 16px",
+                cursor: "pointer"
               }}
             >
               Send
             </button>
           </div>
-
         </div>
       )}
-    </div>
+    </>
   );
 }

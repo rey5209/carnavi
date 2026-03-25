@@ -1,44 +1,93 @@
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Pagination } from "swiper/modules";
+import { Autoplay, Pagination, EffectFade } from "swiper/modules";
 
 import "swiper/css";
 import "swiper/css/pagination";
+import "swiper/css/effect-fade";
 
-import banner1 from "../assets/img/1.jpg";
-import banner2 from "../assets/img/2.jpg";
-import banner3 from "../assets/img/3.jpg";
-import banner4 from "../assets/img/4.jpg";
+/* 🔥 IMPORT IMAGES */
+import banner1Mobile from "../assets/img/1.jpg";
+import banner1Desktop from "../assets/img/4.jpg";
+
+import banner2Mobile from "../assets/img/2.jpg";
+import banner2Desktop from "../assets/img/4.jpg";
+
+import banner3Mobile from "../assets/img/3.jpg";
+import banner3Desktop from "../assets/img/4.jpg";
+
+import banner4Mobile from "../assets/img/3.jpg";
+import banner4Desktop from "../assets/img/4.jpg";
 
 export default function HeroSlider() {
   return (
-    <Swiper
-      modules={[Autoplay, Pagination]}
-      autoplay={{ delay: 4000 }}
-      pagination={{ clickable: true }}
-      loop={true}
-      style={{ width: "100%", height: "500px" }} // ✅ FIXED HEIGHT
-    >
-      <SwiperSlide>
-        <img src={banner1} alt="banner1" style={imgStyle} />
-      </SwiperSlide>
+    <div className="hero-slider">
+      <Swiper
+        modules={[Autoplay, Pagination, EffectFade]}
+        autoplay={{ delay: 4000, disableOnInteraction: false }}
+        pagination={{ clickable: true }}
+        effect="fade"
+        loop={true}
+      >
+        {/* 🔥 SLIDE 1 */}
+        <SwiperSlide>
+          <a href="/reservation">
+            <picture>
+              <source media="(max-width: 768px)" srcSet={banner1Mobile} />
+              <img
+                src={banner1Desktop}
+                alt="banner1"
+                className="banner-img"
+                loading="lazy"
+              />
+            </picture>
+          </a>
+        </SwiperSlide>
 
-      <SwiperSlide>
-        <img src={banner2} alt="banner2" style={imgStyle} />
-      </SwiperSlide>
+        {/* 🔥 SLIDE 2 */}
+        <SwiperSlide>
+          <a href="/reservation">
+            <picture>
+              <source media="(max-width: 768px)" srcSet={banner2Mobile} />
+              <img
+                src={banner2Desktop}
+                alt="banner2"
+                className="banner-img"
+                loading="lazy"
+              />
+            </picture>
+          </a>
+        </SwiperSlide>
 
-      <SwiperSlide>
-        <img src={banner3} alt="banner3" style={imgStyle} />
-      </SwiperSlide>
+        {/* 🔥 SLIDE 3 */}
+        <SwiperSlide>
+          <a href="/reservation">
+            <picture>
+              <source media="(max-width: 768px)" srcSet={banner3Mobile} />
+              <img
+                src={banner3Desktop}
+                alt="banner3"
+                className="banner-img"
+                loading="lazy"
+              />
+            </picture>
+          </a>
+        </SwiperSlide>
 
-      <SwiperSlide>
-        <img src={banner4} alt="banner4" style={imgStyle} />
-      </SwiperSlide>
-    </Swiper>
+        {/* 🔥 SLIDE 4 */}
+        <SwiperSlide>
+          <a href="/reservation">
+            <picture>
+              <source media="(max-width: 768px)" srcSet={banner4Mobile} />
+              <img
+                src={banner4Desktop}
+                alt="banner4"
+                className="banner-img"
+                loading="lazy"
+              />
+            </picture>
+          </a>
+        </SwiperSlide>
+      </Swiper>
+    </div>
   );
 }
-
-const imgStyle = {
-  width: "100%",
-  height: "100%", // ✅ MATCH SWIPER HEIGHT
-  objectFit: "cover", // ✅ FILL NICELY
-};

@@ -24,9 +24,8 @@ const Home = ({ addToCart }) => {
   const [categories, setCategories] = useState([
     { id: 0, name: "All Products", isActive: true },
     { id: 1, name: "LCD", isActive: false },
-    { id: 2, name: "Performance", isActive: false },
-    { id: 3, name: "Safety", isActive: false },
-    { id: 4, name: "Package", isActive: false },
+    { id: 2, name: "Safety", isActive: false },
+    { id: 3, name: "Package", isActive: false },
   ]);
 
   const [sortType, setSortType] = useState([
@@ -127,7 +126,7 @@ const Home = ({ addToCart }) => {
   },
 
   {
-    id: 4,
+    id: 12,
     name: "360 Camera Package D2",
     specifications: [
       "360° view",
@@ -148,7 +147,7 @@ const Home = ({ addToCart }) => {
   },
 
   {
-    id: 4,
+    id: 11,
     name: "360 Camera Package D3",
     specifications: [
       "360° view",

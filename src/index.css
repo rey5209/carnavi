@@ -229,39 +229,41 @@ font-size:18px;
     transform: translateY(-2px);
     box-shadow: var(--shadow-lg);
 }
-/* Chat Button */
-.chat-toggle {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background: #e60012;
-    color: white;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 24px;
-    cursor: pointer;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-    z-index: 999;
+/* Floating button */
+.chat-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: red;
+  color: white;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 9999;
 }
 
-/* Chatbox */
-.chatbox {
-    position: fixed;
-    bottom: 90px;
-    right: 20px;
-    width: 320px;
-    height: 420px;
-    background: white;
-    border-radius: 12px;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.3);
-    display: none;
-    flex-direction: column;
-    overflow: hidden;
-    z-index: 999;
+.chat-container {
+  position: fixed;       /* 🔥 THIS IS THE KEY */
+  bottom: 20px;
+  right: 20px;
+  z-index: 9999;         /* make sure it's above everything */
+}
+
+/* Chat box */
+.chat-box {
+  width: 300px;
+  height: 400px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
 }
 
 .chatbox.show {
@@ -1302,4 +1304,10 @@ box-shadow:0 10px 25px rgba(0,0,0,0.1);
   border-radius: 6px;
   text-decoration: none;
   font-weight: bold;
+}
+.banner-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px;
 }
