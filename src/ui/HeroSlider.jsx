@@ -7,13 +7,13 @@ import "swiper/css/effect-fade";
 
 /* 🔥 IMPORT IMAGES */
 import banner1Mobile from "../assets/img/1.jpg";
-import banner1Desktop from "../assets/img/4.jpg";
+import banner1Desktop from "../assets/img/5.jpg";
 
 import banner2Mobile from "../assets/img/2.jpg";
 import banner2Desktop from "../assets/img/4.jpg";
 
 import banner3Mobile from "../assets/img/3.jpg";
-import banner3Desktop from "../assets/img/4.jpg";
+import banner3Desktop from "../assets/img/5.jpg";
 
 import banner4Mobile from "../assets/img/3.jpg";
 import banner4Desktop from "../assets/img/4.jpg";

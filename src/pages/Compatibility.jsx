@@ -108,29 +108,16 @@ const brandsModels = {
 
   Subaru: [
     "Forester",
-    "XV",
-    "Outback",
     "Impreza",
     "WRX",
-    "BRZ",
   ],
 
   Ford: [
   "Ranger",
   "Everest",
   "EcoSport",
-  "Territory",
-  "Explorer",
-  "Expedition",
-  "Escape",
-  "Focus",
   "Fiesta",
-  "Mustang",
-  "F-150",
-  "Bronco",
-  "Bronco Sport",
-  "Edge",
-  "Fusion",
+  "Focus",
 ],
 };
 
@@ -233,8 +220,13 @@ const Compatibility = ({ addToCart }) => {
       <h1>Vehicle Compatibility</h1>
 
       <p className="compatibility-desc">
-        Check which Android head unit works with your vehicle.
-      </p>
+  Check which Android head unit works with your vehicle.
+</p>
+
+<p className="compatibility-note">
+  Note: Some lower-year models are compatible with standard Android head units. 
+  For newer models (2018 and above), compatibility may vary and we recommend choosing based on your exact vehicle model.
+</p>
 
       {/* SELECTOR */}
 
