@@ -30,7 +30,7 @@ export default function HeroSlider() {
       >
         {/* 🔥 SLIDE 1 */}
         <SwiperSlide>
-          <a href="/reservation">
+          <a href="/">
             <picture>
               <source media="(max-width: 768px)" srcSet={banner1Mobile} />
               <img
@@ -45,7 +45,7 @@ export default function HeroSlider() {
 
         {/* 🔥 SLIDE 2 */}
         <SwiperSlide>
-          <a href="/reservation">
+          <a href="/">
             <picture>
               <source media="(max-width: 768px)" srcSet={banner2Mobile} />
               <img
@@ -60,7 +60,7 @@ export default function HeroSlider() {
 
         {/* 🔥 SLIDE 3 */}
         <SwiperSlide>
-          <a href="/reservation">
+          <a href="/">
             <picture>
               <source media="(max-width: 768px)" srcSet={banner3Mobile} />
               <img
@@ -75,7 +75,7 @@ export default function HeroSlider() {
 
         {/* 🔥 SLIDE 4 */}
         <SwiperSlide>
-          <a href="/reservation">
+          <a href="/">
             <picture>
               <source media="(max-width: 768px)" srcSet={banner4Mobile} />
               <img

@@ -28,19 +28,131 @@ Object.entries(mediaModules).forEach(([path, src]) => {
 
 const vehicles = [
   {
-    model: "Toyota Fortuner (2021+)",
-    unit: "Android 10.1 QLED Unit",
+    model: "Toyota Fortuner (2017+)",
+    unit: "PAckage D",
     price: "₱16,999",
     note: "Latest dashboard design",
     media: groupedMedia["fortuner"] || [],
   },
 
   {
-    model: "Toyota Vios (2014-2024)",
-    unit: "Android QLED Unit",
-    price: "₱14,999",
-    note: "Best seller",
+    model: "Toyota Fortuner (2003-2007)",
+    unit: "Package A",
+    price: "₱8,000",
+    note: "Recommended for older models",
+    media: groupedMedia["fortuner_2003_2007"] || [],
+  },
+
+  {
+    model: "Toyota Fortuner (2004-2014)",
+    unit: "Package B",
+    price: "₱9,999",
+    note: "Recommended for older models",
+    media: groupedMedia["fortuner_2004_2013"] || [],
+  },
+
+  {
+    model: "Toyota Corolla (2004-2014)",
+    unit: "Package A",
+    price: "₱11,999",
+    note: "Recommended for older models + Installation fee for bodys",
+    media: groupedMedia["corolla"] || [],
+  },
+
+  {
+    model: "Toyota Vios (2014-2019)",
+    unit: "Package Unit D",
+    price: "₱15,999",
+    note: "Latest dashboard design",
     media: groupedMedia["vios_old"] || [],
+  },
+
+  {
+    model: "Toyota Innova (2014-2019)",
+    unit: "Package Unit D",
+    price: "₱15,999",
+    note: "Latest dashboard design",
+    media: groupedMedia["Innova_2016_2023"] || [],
+  },
+
+  {
+    model: "Toyota Innova (2004-2013)",
+    unit: "Package Unit B",
+    price: "₱9,999",
+    note: "Latest dashboard design",
+    media: groupedMedia["innova_2004_2013"] || [],
+  },
+
+  {
+    model: "Toyota Innova (2003-2006)",
+    unit: "Package Unit A",
+    price: "₱8,000",
+    note: "Latest dashboard design",
+    media: groupedMedia["innova_2003_2006"] || [],
+  },
+
+  {
+    model: "Toyota Vios (2003-2006)",
+    unit: "Package Unit A",
+    price: "₱8,000",
+    note: "Recommended for older models",
+    media: groupedMedia["vios_2003_2006"] || [],
+  },
+
+  {
+    model: "Mitsubishi Lancer EX (2003-2006)",
+    unit: "Package Unit A",
+    price: "₱8,000",
+    note: "Recommended for older models",
+    media: groupedMedia["mitsubishi_ex"] || [],
+  },
+
+  {
+    model: "Mitsubishi Lancer (2003-2006)",
+    unit: "Package Unit A",
+    price: "₱8,000",
+    note: "Recommended for older models",
+    media: groupedMedia["mitsubishi_lancer"] || [],
+  },
+
+  {
+    model: "Mitsubishi Lancer (2013-2023)",
+    unit: "Package Unit D",
+    price: "₱15,999",
+    note: "Recommended for older models",
+    media: groupedMedia["lancer_2016_2023"] || [],
+  },
+
+  {
+    model: "Mitsubishi Montero Sport (2003-2006)",
+    unit: "Package Unit A",
+    price: "₱8,000",
+    note: "Recommended for older models",
+    media: groupedMedia["montero_2003_2006"] || [],
+  },
+
+  {
+    model: "Mitsubishi Montero Sport (2004-2013)",
+    unit: "Package Unit B",
+    price: "₱9,999",
+    note: "Recommended for older models",
+    media: groupedMedia["montero_2004_2013"] || [],
+  },
+
+  {
+    model: "Mitsubishi Montero Sport (2016-2023)",
+    unit: "Package Unit D",
+    price: "₱15,999",
+    note: "Recommended for newer models",
+    media: groupedMedia["montero_2016_2023"] || [],
+  },
+
+  {
+    model: "Toyota Vios (2004-2013)",
+    unit: "Package B",
+    price: "₱9,999",
+    note: "Recommended for 2004-2013 models",
+    media: groupedMedia["vios_2004_2013"] || [],
   },
 
   {
@@ -49,6 +161,14 @@ const vehicles = [
     price: "₱14,999",
     note: "Clean installation",
     media: groupedMedia["civic"] || [],
+  },
+
+  {
+    model: "Hyundai Kona",
+    unit: "Package B or C",
+    price: "₱9,999",
+    note: "Recommended for Hyundai Kona models, may require custom installation.",
+    media: groupedMedia["kona"] || [],
   },
 ];
 
@@ -61,12 +181,32 @@ const brandsModels = {
     "Hilux",
     "Innova",
     "Corolla Altis",
+    "Corolla",
     "Wigo",
     "Avanza",
     "Rush",
     "Land Cruiser",
     "Raize",
   ],
+
+  Mitsubishi: [
+  "Mirage",
+  "Mirage G4",
+  "Lancer",
+  "Lancer EX",
+  "Attrage",
+  "Xpander",
+  "Xpander Cross",
+  "Montero Sport",
+  "Strada",
+  "L300",
+  "ASX",
+  "Outlander",
+  "Outlander PHEV",
+  "Eclipse Cross",
+  "Pajero",
+  "Adventure",
+],
 
   Honda: [
     "Civic",
@@ -149,8 +289,8 @@ Object.entries(brandsModels).forEach(([brand, models]) => {
           parseInt(year) >= 2020
             ? "₱16,999"
             : parseInt(year) >= 2015
-            ? "₱14,999"
-            : "₱9,999",
+            ? "₱15,999"
+            : "₱8,000",
 
         productName:
           parseInt(year) >= 2020

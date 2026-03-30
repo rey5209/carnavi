@@ -17,7 +17,7 @@ const About = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
           >
-            About CarNavi
+            Tungkol sa CarNavi
           </motion.h1>
 
           <motion.p
@@ -26,7 +26,7 @@ const About = () => {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.4 }}
           >
-            Upgrade your drive with premium technology & professional installation.
+            I-upgrade ang iyong pagmamaneho gamit ang de-kalidad na teknolohiya at propesyonal na pag-install.
           </motion.p>
         </div>
       </section>
@@ -41,8 +41,7 @@ const About = () => {
           >
             <h3>🚗 Who We Are</h3>
             <p>
-              CarNavi specializes in premium car accessories including Android
-              head units, Apple CarPlay systems, LED lighting, and performance upgrades.
+              Dalubhasa ang CarNavi sa mga de-kalidad na car accessories tulad ng Android head units, Apple CarPlay systems, LED lighting, at mga performance upgrades.
             </p>
           </motion.div>
 
@@ -52,8 +51,8 @@ const About = () => {
           >
             <h3>🎯 Our Mission</h3>
             <p>
-              We aim to transform every drive with modern technology, seamless
-              integration, and top-quality installation services.
+              Ang aming layunin ay i-transform ang bawat pagmamaneho gamit ang modernong teknolohiya, madaling
+              integration, at mataas na kalidad na serbisyo sa pag-install.
             </p>
           </motion.div>
 
@@ -63,8 +62,8 @@ const About = () => {
           >
             <h3>⚙️ What We Offer</h3>
             <p>
-              From head units to full system upgrades, we deliver reliable,
-              high-performance solutions tailored for your vehicle.
+              Mula sa head units hanggang sa mga kumpletong system upgrades, nagbibigay kami ng magagandang,
+              high-performance na mga solusyon na inaayos para sa iyong sasakyan.
             </p>
           </motion.div>
 
@@ -74,8 +73,7 @@ const About = () => {
           >
             <h3>⭐ Why Choose Us</h3>
             <p>
-              Trusted by hundreds of customers, we combine quality products,
-              expert installation, and excellent after-sales support.
+              Pinagkakatiwalaan ng daan-daang customer, pinagsasama namin ang de-kalidad na mga produkto, eksperto at maayos na pag-install, at mahusay na after-sales support.
             </p>
           </motion.div>
 

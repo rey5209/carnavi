@@ -15,7 +15,6 @@ const products = [
 ];
 
 const Shop = ({ addToCart }) => {
-
   const navigate = useNavigate();
   const [showCartDialog, setShowCartDialog] = useState(false);
 
@@ -26,19 +25,19 @@ const Shop = ({ addToCart }) => {
 
   return (
     <div className="shop-page">
-
       <div className="container">
-
-        <h1>Shop</h1>
+        <h1>Accessories</h1>
 
         <div className="product-grid">
-
           {products.length === 0 ? (
             <p>No products available</p>
           ) : (
             products.map((product) => (
-              <div key={product.id} className="product-card">
-
+              <div
+                key={product.id}
+                className="product-card"
+                onClick={() => navigate(`/product/${product.id}`)} // ✅ CLICKABLE CARD
+              >
                 <img
                   src={product.image}
                   alt={product.name}
@@ -53,32 +52,26 @@ const Shop = ({ addToCart }) => {
 
                 <button
                   className="add-to-cart-btn"
-                  onClick={() => handleAdd(product)}
+                  onClick={(e) => {
+                    e.stopPropagation(); // ✅ PREVENT CARD CLICK
+                    handleAdd(product);
+                  }}
                 >
                   Add to Cart
                 </button>
-
               </div>
             ))
           )}
-
         </div>
-
       </div>
 
-
       {showCartDialog && (
-
         <div className="cart-dialog-overlay">
-
           <div className="cart-dialog">
-
             <h3>Item added to cart 🛒</h3>
-
             <p>What would you like to do?</p>
 
             <div className="cart-dialog-buttons">
-
               <button
                 className="continue-btn"
                 onClick={() => setShowCartDialog(false)}
@@ -92,15 +85,10 @@ const Shop = ({ addToCart }) => {
               >
                 Proceed to Checkout
               </button>
-
             </div>
-
           </div>
-
         </div>
-
       )}
-
     </div>
   );
 };
