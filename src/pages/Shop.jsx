@@ -36,35 +36,40 @@ const Shop = ({ addToCart }) => {
               <div
                 key={product.id}
                 className="product-card"
-                onClick={() => navigate(`/product/${product.id}`)} // ✅ CLICKABLE CARD
+                onClick={() => navigate(`/product/${product.id}`)}
               >
+                {/* IMAGE */}
                 <img
                   src={product.image}
                   alt={product.name}
                   className="product-img"
                 />
 
-                <h3>{product.name}</h3>
+                {/* ✅ FIXED STRUCTURE */}
+                <div className="product-info">
+                  <h3>{product.name}</h3>
 
-                <p className="price">
-                  ₱{product.price.toLocaleString()}
-                </p>
+                  <p className="price">
+                    ₱{product.price.toLocaleString()}
+                  </p>
 
-                <button
-                  className="add-to-cart-btn"
-                  onClick={(e) => {
-                    e.stopPropagation(); // ✅ PREVENT CARD CLICK
-                    handleAdd(product);
-                  }}
-                >
-                  Add to Cart
-                </button>
+                  <button
+                    className="add-to-cart-btn"
+                    onClick={(e) => {
+                      e.stopPropagation(); // prevent card click
+                      handleAdd(product);
+                    }}
+                  >
+                    Add to Cart
+                  </button>
+                </div>
               </div>
             ))
           )}
         </div>
       </div>
 
+      {/* CART MODAL */}
       {showCartDialog && (
         <div className="cart-dialog-overlay">
           <div className="cart-dialog">

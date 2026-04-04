@@ -6,7 +6,7 @@ import ProductLists from "../ui/ProductLists";
 import HeroSlider from "../ui/HeroSlider";
 
 import img1 from "../assets/img/2knob.jpg";
-import img2 from "../assets/img/10in2kdualknob.jpg";
+import img2 from "../assets/img/2knob.jpg";
 import img3 from "../assets/img/13in4gb64gb.jpg";
 import img4 from "../assets/img/360camcollection.jpg";
 import img5 from "../assets/img/PackageA.jpg";
@@ -15,6 +15,7 @@ import img7 from "../assets/img/PackageB.jpg";
 import img8 from "../assets/img/PackageC.jpg";
 import img9 from "../assets/img/PackageD.jpg";
 import img10 from "../assets/img/PackageD2.jpg";
+import img11 from "../assets/img/PackageD10.jpg";
 
 const Home = ({ addToCart }) => {
   const navigate = useNavigate();
@@ -126,7 +127,7 @@ const Home = ({ addToCart }) => {
   },
 
   {
-    id: 12,
+    id: 5,
     name: "360 Camera Package D2",
     specifications: [
       "360° view",
@@ -147,7 +148,7 @@ const Home = ({ addToCart }) => {
   },
 
   {
-    id: 11,
+    id: 6,
     name: "360 Camera Package D3",
     specifications: [
       "360° view",
@@ -169,7 +170,7 @@ const Home = ({ addToCart }) => {
   },
 
   {
-    id: 5,
+    id: 7,
     name: "Package A",
     specifications: [
       "2GB RAM, 32GB Storage",
@@ -189,7 +190,7 @@ const Home = ({ addToCart }) => {
   },
 
   {
-    id: 6,
+    id: 8,
     name: "Package A + FDC",
     specifications: [
       "2GB RAM, 32GB Storage",
@@ -211,7 +212,7 @@ const Home = ({ addToCart }) => {
   },
 
   {
-    id: 7,
+    id: 9,
     name: "Package B",
     specifications: [
       "4GB RAM, 64GB Storage",
@@ -230,7 +231,7 @@ const Home = ({ addToCart }) => {
   },
 
   {
-    id: 8,
+    id: 10,
     name: "Package C",
     specifications: [
       "4GB RAM, 64GB Storage",
@@ -249,8 +250,8 @@ const Home = ({ addToCart }) => {
   },
 
   {
-    id: 9,
-    name: "Package D",
+    id: 11,
+    name: "Package D (9 INCH)",
     specifications: [
       "4GB RAM, 64GB Storage",
       "8 CPU's Octa Core Processor",
@@ -270,7 +271,7 @@ const Home = ({ addToCart }) => {
   },
 
   {
-    id: 10,
+    id: 12,
     name: "Package D2 (With 360-Camera)",
     specifications: [
       "4Gb RAM, 64GB Storage",
@@ -288,6 +289,27 @@ const Home = ({ addToCart }) => {
     inStock: true,
     badge: "",
     freebies: ["Free installation at our shop only", "Panel Frame", "RCA Cables", "GPS Antenna", "USB Ports"],
+  },
+
+  {
+    id: 13,
+    name: "Package D (10 INCH)",
+    specifications: [
+      "4GB RAM, 64GB Storage",
+      "8 CPU's Octa Core Processor",
+      "360-Camera Support",
+      "9-inch QLED display",
+      "Android version 14",
+      "Wireless CarPlay & Android Auto",
+    ],
+    category: "Package",
+    price: 16999,
+    rating: 4.7,
+    description: "with 10” QLED display, Android 14, and smooth octa-core performance.",
+    image: img11,
+    inStock: true,
+    badge: "",
+    freebies: ["Free installation at our shop only", "DVR Dashcam", "Reverse Camera", "Panel Frame", "RCA Cables", "GPS Antenna", "USB Ports"],
   },
 ]);
 

@@ -1,182 +1,205 @@
+/* PAGE */
+
 .shop-page{
-padding:60px 20px;
-background:#f7f7f7;
-min-height:100vh;
+  padding:60px 20px;
+  padding-bottom:100px; /* ✅ prevent bottom cutoff (iPhone fix) */
+  background:#f7f7f7;
+  min-height:100vh;
 }
 
 .shop-page h1{
-text-align:center;
-margin-bottom:40px;
-font-size:32px;
-font-weight:600;
+  text-align:center;
+  margin-bottom:40px;
+  font-size:32px;
+  font-weight:600;
 }
 
 /* PRODUCT GRID */
 
 .product-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:25px;
-max-width:1200px;
-margin:auto;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:25px;
+  max-width:1200px;
+  margin:auto;
 }
 
 /* PRODUCT CARD */
 
 .product-card{
-background:white;
-border-radius:14px;
-overflow:hidden;
-box-shadow:0 8px 20px rgba(0,0,0,0.08);
-display:flex;
-flex-direction:column;
-justify-content:space-between;
-transition:0.3s;
+  background:white;
+  border-radius:14px;
+  overflow:hidden;
+  box-shadow:0 8px 20px rgba(0,0,0,0.08);
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  transition:0.3s;
+  cursor:pointer;
 }
 
 .product-card:hover{
-transform:translateY(-6px);
-box-shadow:0 12px 30px rgba(0,0,0,0.12);
+  transform:translateY(-6px);
+  box-shadow:0 12px 30px rgba(0,0,0,0.12);
 }
 
 /* IMAGE */
 
 .product-img{
-width:100%;
-height:220px;
-object-fit:cover;
+  width:100%;
+  height:220px;
+  object-fit:cover;
 }
 
 /* PRODUCT INFO */
 
 .product-info{
-padding:18px;
-text-align:center;
+  padding:18px;
+  text-align:center;
 }
 
 .product-info h3{
-font-size:16px;
-margin-bottom:8px;
-min-height:42px;
+  font-size:16px;
+  margin-bottom:10px;
+  min-height:48px; /* ✅ consistent height */
 }
 
 /* PRICE */
 
 .price{
-font-size:18px;
-font-weight:700;
-color:#e60012;
-margin-bottom:12px;
+  font-size:18px;
+  font-weight:700;
+  color:#e60012;
+  margin-bottom:12px;
 }
 
 /* ADD TO CART */
 
 .add-to-cart-btn{
-width:100%;
-padding:12px;
-border:none;
-background:#e60012;
-color:white;
-border-radius:8px;
-cursor:pointer;
-font-weight:600;
-transition:0.2s;
+  width:100%;
+  padding:12px;
+  border:none;
+  background:#e60012;
+  color:white;
+  border-radius:8px;
+  cursor:pointer;
+  font-weight:600;
+  transition:0.2s;
 }
 
 .add-to-cart-btn:hover{
-background:#c70010;
+  background:#c70010;
 }
 
 /* CART DIALOG */
 
 .cart-dialog-overlay{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:rgba(0,0,0,0.45);
-display:flex;
-align-items:center;
-justify-content:center;
-z-index:999;
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.45);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  z-index:999;
 }
 
 .cart-dialog{
-background:white;
-padding:28px;
-border-radius:14px;
-width:320px;
-text-align:center;
-box-shadow:0 15px 40px rgba(0,0,0,0.25);
-animation:dialogFade .3s ease;
+  background:white;
+  padding:28px;
+  border-radius:14px;
+  width:320px;
+  text-align:center;
+  box-shadow:0 15px 40px rgba(0,0,0,0.25);
+  animation:dialogFade .3s ease;
 }
 
 @keyframes dialogFade{
-from{
-transform:scale(.9);
-opacity:0;
-}
-to{
-transform:scale(1);
-opacity:1;
-}
+  from{
+    transform:scale(.9);
+    opacity:0;
+  }
+  to{
+    transform:scale(1);
+    opacity:1;
+  }
 }
 
 .cart-dialog-buttons{
-display:flex;
-gap:12px;
-margin-top:20px;
+  display:flex;
+  gap:12px;
+  margin-top:20px;
 }
 
 .continue-btn{
-flex:1;
-padding:10px;
-border:none;
-background:#ddd;
-border-radius:6px;
-cursor:pointer;
+  flex:1;
+  padding:10px;
+  border:none;
+  background:#ddd;
+  border-radius:6px;
+  cursor:pointer;
 }
 
 .checkout-btn{
-flex:1;
-padding:10px;
-border:none;
-background:#e60012;
-color:white;
-border-radius:6px;
-cursor:pointer;
+  flex:1;
+  padding:10px;
+  border:none;
+  background:#e60012;
+  color:white;
+  border-radius:6px;
+  cursor:pointer;
 }
 
 /* MOBILE RESPONSIVE */
 
 @media (max-width:768px){
 
-.shop-page{
-padding:40px 15px;
-}
+  .shop-page{
+    padding:40px 15px;
+  }
 
-.shop-page h1{
-font-size:24px;
-margin-bottom:25px;
-}
+  .shop-page h1{
+    font-size:24px;
+    margin-bottom:25px;
+  }
 
-.product-grid{
-grid-template-columns:1fr;
-gap:18px;
-}
+  /* 🔥 OPTION A: 1 column (current) */
+  .product-grid{
+    grid-template-columns:1fr;
+    gap:18px;
+  }
 
-.product-img{
-height:200px;
-}
+  /* 🔥 OPTION B (BETTER): 2 columns like Shopee */
+  /*
+  .product-grid{
+    grid-template-columns:repeat(2,1fr);
+    gap:12px;
+  }
+  */
 
-.product-info h3{
-font-size:15px;
-}
+  .product-img{
+    height:180px;
+    object-fit:contain;
+    /* 👉 if you want NO crop use:
+       object-fit:contain;
+       object-fit:cover is better for product photos to fill the space and look consistent, but it may crop some images. Adjust as needed.
+    */
+  }
 
-.add-to-cart-btn{
-padding:14px;
-font-size:15px;
-}
+  .product-info h3{
+    font-size:14px;
+    min-height:40px;
+  }
+
+  .price{
+    font-size:16px;
+  }
+
+  .add-to-cart-btn{
+    padding:12px;
+    font-size:14px;
+  }
 
 }
