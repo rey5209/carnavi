@@ -29,10 +29,58 @@ Object.entries(mediaModules).forEach(([path, src]) => {
 const vehicles = [
   {
     model: "Toyota Fortuner (2017+)",
-    unit: "PAckage D",
+    unit: "Package D",
     price: "₱16,999",
     note: "Latest dashboard design",
     media: groupedMedia["fortuner"] || [],
+  },
+
+  {
+    model: "Toyota Hilux (2017+)",
+    unit: "Package D",
+    price: "₱16,999",
+    note: "Latest dashboard design",
+    media: groupedMedia["hilux_2016+"] || [],
+  },
+
+  {
+    model: "Toyota Hilux (2004 - 2014)",
+    unit: "Package B",
+    price: "₱9,999",
+    note: "Recommended for older models",
+    media: groupedMedia["hilux_2004_2013"] || [],
+  },
+
+  {
+    model: "Toyota Hilux (2003 - 2010)",
+    unit: "Package A",
+    price: "₱8,000",
+    note: "Recommended for older models",
+    media: groupedMedia["hilux_2003"] || [],
+  },
+
+  {
+    model: "Toyota Wigo (2003 - 2010)",
+    unit: "Package A",
+    price: "₱8,000",
+    note: "Recommended for older models",
+    media: groupedMedia["wigo_2003"] || [],
+  },
+
+  {
+    model: "Toyota Wigo (2004 - 2014)",
+    unit: "Package B",
+    price: "₱9,999",
+    note: "Recommended for older models",
+    media: groupedMedia["wigo_2004"] || [],
+  },
+
+  {
+    model: "Toyota Wigo (2016+)",
+    unit: "Package D",
+    price: "₱15,999",
+    note: "Latest dashboard design",
+    media: groupedMedia["wigo_2016"] || [],
   },
 
   {
@@ -170,6 +218,14 @@ const vehicles = [
     note: "Recommended for Hyundai Kona models, may require custom installation.",
     media: groupedMedia["kona"] || [],
   },
+
+  {
+    model: "Suzuki Vitara (2003-2006)",
+    unit: "Package Unit A",
+    price: "₱8,000",
+    note: "Recommended for older models",
+    media: groupedMedia["vitara_2004_2013"] || [],
+  },
 ];
 
 /* VEHICLE DB */
@@ -188,6 +244,35 @@ const brandsModels = {
     "Land Cruiser",
     "Raize",
   ],
+
+  Suzuki: [
+  "Alto",
+  "Alto K10",
+  "APV",
+  "Baleno",
+  "Celerio",
+  "Ciaz",
+  "Dzire",
+  "Ertiga",
+  "XL7",
+  "Fronx",
+  "Grand Vitara",
+  "Jimny",
+  "S-Presso",
+  "Swift",
+  "Vitara",
+  "Brezza",
+  "Carry",
+  "Super Carry",
+  "Ignis",
+  "Kizashi",
+  "Liana",
+  "Splash",
+  "Wagon R",
+  "Wagon R Stingray",
+  "Every",
+  "Escudo"
+],
 
   Mitsubishi: [
   "Mirage",
