@@ -1314,9 +1314,9 @@ box-shadow:0 10px 25px rgba(0,0,0,0.1);
   border-radius: 10px;
 }
 
-@media (max-width:768px){
-  .modal-content{
-    max-height: 85vh;
-    border-radius: 16px;
-  }
+.modal-content {
+  scroll-behavior: smooth;
+  border-radius: 16px;
+  padding-bottom: 10px;
+
 }
