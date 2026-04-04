@@ -72,3 +72,27 @@ transition:0.3s;
 .checkout-btn:hover{
 background:#c4000f;
 }
+
+@media (max-width:768px){
+
+  .cart-container{
+    grid-template-columns:1fr; /* 🔥 STACK */
+  }
+
+}
+
+@media (max-width:768px){
+
+  .cart-summary{
+    margin-top:20px;
+  }
+
+}
+
+.chat-button{
+  bottom:80px;
+}
+
+.cart-page{
+  padding-bottom:120px; /* avoids iPhone bottom bar */
+}

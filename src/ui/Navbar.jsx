@@ -43,7 +43,7 @@ return ( <nav className="navbar"> <div className="nav-container">
     {/* CENTER : Logo */}
     <Link to="/" className="logo center-logo" onClick={closeMenu}>
       <img src={logo} alt="CarNavi" className="logo-img" />
-      <span>CarNavi</span>
+      <span>Carnavi Android Pangasinan</span>
     </Link>
 
     {/* RIGHT : Cart icon */}
