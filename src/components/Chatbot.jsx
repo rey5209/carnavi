@@ -67,8 +67,8 @@ export default function Chatbot() {
       reply: { text: "Yes! meron po sir " }
     },
     {
-      keywords: ["creator","likha","carnavi bot"],
-      reply: { text: "Ako si Carnavi Bot, nilikha ni Rey and Meyers Group" }
+      keywords: ["mas mababa","low price","carnavi bot"],
+      reply: { text: "Ask nyu nalang po sa Facebook messenger" }
     }
   ];
 

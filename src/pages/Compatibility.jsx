@@ -46,7 +46,7 @@ const vehicles = [
   {
     model: "Toyota Hilux (2004 - 2014)",
     unit: "Package B",
-    price: "₱9,999",
+    price: "₱11,000",
     note: "Recommended for older models",
     media: groupedMedia["hilux_2004_2013"] || [],
   },
@@ -70,7 +70,7 @@ const vehicles = [
   {
     model: "Toyota Wigo (2004 - 2014)",
     unit: "Package B",
-    price: "₱9,999",
+    price: "₱11,000",
     note: "Recommended for older models",
     media: groupedMedia["wigo_2004"] || [],
   },
@@ -94,7 +94,7 @@ const vehicles = [
   {
     model: "Toyota Fortuner (2004-2014)",
     unit: "Package B",
-    price: "₱9,999",
+    price: "₱11,000",
     note: "Recommended for older models",
     media: groupedMedia["fortuner_2004_2013"] || [],
   },
@@ -102,7 +102,7 @@ const vehicles = [
   {
     model: "Toyota Corolla (2004-2014)",
     unit: "Package A",
-    price: "₱11,999",
+    price: "₱8,000",
     note: "Recommended for older models + Installation fee for bodys",
     media: groupedMedia["corolla"] || [],
   },
@@ -126,7 +126,7 @@ const vehicles = [
   {
     model: "Toyota Innova (2004-2013)",
     unit: "Package Unit B",
-    price: "₱9,999",
+    price: "₱11,000",
     note: "Latest dashboard design",
     media: groupedMedia["innova_2004_2013"] || [],
   },
@@ -182,7 +182,7 @@ const vehicles = [
   {
     model: "Mitsubishi Montero Sport (2004-2013)",
     unit: "Package Unit B",
-    price: "₱9,999",
+    price: "₱11,000",
     note: "Recommended for older models",
     media: groupedMedia["montero_2004_2013"] || [],
   },
@@ -198,7 +198,7 @@ const vehicles = [
   {
     model: "Toyota Vios (2004-2013)",
     unit: "Package B",
-    price: "₱9,999",
+    price: "₱11,000",
     note: "Recommended for 2004-2013 models",
     media: groupedMedia["vios_2004_2013"] || [],
   },
@@ -214,7 +214,7 @@ const vehicles = [
   {
     model: "Hyundai Kona",
     unit: "Package B or C",
-    price: "₱9,999",
+    price: "₱11,000",
     note: "Recommended for Hyundai Kona models, may require custom installation.",
     media: groupedMedia["kona"] || [],
   },
@@ -225,6 +225,30 @@ const vehicles = [
     price: "₱8,000",
     note: "Recommended for older models",
     media: groupedMedia["vitara_2004_2013"] || [],
+  },
+
+  {
+    model: "Honda Mobilio",
+    unit: "Package D2",
+    price: "₱35,000",
+    note: "360 camera + Android unit",
+    media: groupedMedia["mobilio"] || [],
+  },
+
+  {
+    model: "Honda Civic FD (2004-2013)",
+    unit: "Package B",
+    price: "₱11,000",
+    note: "Recommended for older models",
+    media: groupedMedia["FD"] || [],
+  },
+
+  {
+    model: "Ford Ranger (2004-2013)",
+    unit: "10 inch 2K Dual Knob Display",
+    price: "₱16,999",
+    note: "Recommended for older models",
+    media: groupedMedia["ranger"] || [],
   },
 ];
 
