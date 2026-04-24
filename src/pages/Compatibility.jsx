@@ -250,6 +250,62 @@ const vehicles = [
     note: "Recommended for older models",
     media: groupedMedia["ranger"] || [],
   },
+
+  {
+    model: "Ford Ecosport (2004-2013)",
+    unit: "Package A + FDC",
+    price: "₱14,500",
+    note: "Recommended for older models",
+    media: groupedMedia["ecosport"] || [],
+  },
+
+  {
+    model: "Hyundai Accent (2004-2013)",
+    unit: "Package A + FDC",
+    price: "₱14,500",
+    note: "Recommended for older models",
+    media: groupedMedia["accent"] || [],
+  },
+
+  {
+    model: "Honda Brio (2016)",
+    unit: "Package D",
+    price: "₱15,999",
+    note: "Recommended for latest models",
+    media: groupedMedia["brio"] || [],
+  },
+
+  {
+    model: "Honda Civic (2016)",
+    unit: "Package C with DvR dashcam.",
+    price: "₱15,999",
+    note: "Honda Civic RS 2016+ recommended for latest models",
+    media: groupedMedia["civic"] || [],
+  },
+
+  {
+    model: "Chevrolet Trailblazer",
+    unit: "Package D",
+    price: "₱15,999",
+    note: "Recommended for Chevrolet Trailblazer",
+    media: groupedMedia["trailblazer"] || [],
+  },
+
+  {
+    model: "Isuzu D-Max (2012)",
+    unit: "Package D",
+    price: "₱15,999",
+    note: "Recommended for Isuzu D-Max",
+    media: groupedMedia["dmax"] || [],
+  },
+
+  {
+    model: "Isuzu MU-X (2012)",
+    unit: "Dual Knob Android Unit",
+    price: "₱16,999",
+    note: "Recommended for Isuzu MU-X",
+    media: groupedMedia["mux"] || [],
+  },
 ];
 
 /* VEHICLE DB */
@@ -368,6 +424,30 @@ const brandsModels = {
   "Fiesta",
   "Focus",
 ],
+Chevrolet: [
+    "Spark",
+    "Sail",
+    "Aveo",
+    "Cruze",
+    "Malibu",
+    "Impala",
+    "Camaro",
+    "Corvette",
+    "Trax",
+    "Tracker",
+    "Trailblazer",
+    "Equinox",
+    "Traverse",
+    "Tahoe",
+    "Suburban",
+    "Colorado",
+    "Silverado",
+    "Express",
+    "Captiva",
+    "Groove",
+    "Onix",
+    "Blazer",
+  ],
 };
 
 const years = Array.from({ length: 2024 - 2001 + 1 }, (_, i) =>

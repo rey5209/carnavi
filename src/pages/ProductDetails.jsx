@@ -3,7 +3,7 @@ import { useState } from "react";
 import "../styles/ProductDetails.css";
 
 import img1 from "../assets/img/1.jpg";
-import img2 from "../assets/img/2.jpg";
+import img2 from "../assets/img/speaker.jpg";
 import img3 from "../assets/img/3.jpg";
 import img4 from "../assets/img/360camcollection.jpg";
 
@@ -26,13 +26,14 @@ const products = [
   },
   {
     id: 2,
-    name: "Performance Air Filter",
-    price: 2999,
+    name: "JBL Speaker",
+    price: 7500,
     image: img2,
     specs: [
-      "High Air Flow",
-      "Reusable Filter",
-      "Improves Engine Efficiency"
+      "Power Handling: 40WRMS, 250W PEAK",
+      "Sensitivity: 91db",
+      "Frequency response: 55HZ-20KHZ",
+      "JBL Design Language"
     ],
     compatibility: ["Universal"]
   },
